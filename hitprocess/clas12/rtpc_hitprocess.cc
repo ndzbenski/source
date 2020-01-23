@@ -150,10 +150,10 @@ map<string, double> rtpc_HitProcess :: integrateDgt(MHit* aHit, int hitn)
 	// 
 
     // -------------------------- TIME SHIFT for non-primary tracks ---------------------------
-    if(aHit->GetTId() != timeShift_map.cend()->first){
-        if(aHit->GetTId()< 3) timeShift_map[aHit->GetTId()] = 0.0;
-        else timeShift_map[aHit->GetTId()] = G4RandFlat::shoot(-8000.,8000.);
-    }
+    //if(aHit->GetTId() != timeShift_map.cend()->first){
+    //    if(aHit->GetTId()< 3) timeShift_map[aHit->GetTId()] = 0.0;
+    //    else timeShift_map[aHit->GetTId()] = G4RandFlat::shoot(-8000.,8000.);
+    //}
     
     
 	double LposX=0.;
@@ -232,10 +232,10 @@ map<string, double> rtpc_HitProcess :: integrateDgt(MHit* aHit, int hitn)
             if( phi_rad>=2.0*PI )  phi_rad-=2.0*PI;
             
             // time shift
-            shift_t = timeShift_map.find(aHit->GetTId())->second;
+            //shift_t = timeShift_map.find(aHit->GetTId())->second;
             
             // NO time shift
-            //shift_t = 0.0;
+            shift_t = 0.0;
             
             tdc=t_s2pad+t_gap+shift_t;
             adc=DiffEdep;
@@ -268,7 +268,6 @@ map<string, double> rtpc_HitProcess :: integrateDgt(MHit* aHit, int hitn)
             dgtz["Time"]   = tdc;
             dgtz["ADC"]    = (int) adc;
             dgtz["Ped"] = 0;
-            dgtz["TimeShift"] = shift_t;
             dgtz["hitn"]   = (int) hitn;
     
 	    } // end step
