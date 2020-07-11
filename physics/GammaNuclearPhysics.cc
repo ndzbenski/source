@@ -10,9 +10,8 @@
 #include "G4Electron.hh"
 #include "G4Positron.hh"
 #include "G4ProcessManager.hh"
-#include "G4GammaGeneralProcess.hh"
+//#include "G4GammaGeneralProcess.hh"
 #include "G4LossTableManager.hh"
-
 #include "G4HadronicParameters.hh"
 
 #include "GammaNuclearPhysics.h"
