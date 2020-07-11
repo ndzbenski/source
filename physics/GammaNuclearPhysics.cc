@@ -12,7 +12,7 @@
 #include "G4ProcessManager.hh"
 //#include "G4GammaGeneralProcess.hh"
 #include "G4LossTableManager.hh"
-#include "G4HadronicParameters.hh"
+//#include "G4HadronicParameters.hh"
 
 #include "GammaNuclearPhysics.h"
 
